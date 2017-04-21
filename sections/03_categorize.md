@@ -334,7 +334,15 @@ is determined by a single parameter which provides a quantification of privacy.
 Simmons et al. [@doi:10.1016/j.cels.2016.04.013] present the ability to perform
 GWASs in a differentially private manner and Abadi et al. [@arxiv:1607.00133]
 show the ability to train deep learning classifiers under the differential
-privacy framework. However, this training process places constraints on the
+privacy framework. Federated learning
+[@arxiv:1602.05629] and secure aggregations
+[@url:http://proceedings.mlr.press/v54/mcmahan17a.html
+@url:https://eprint.iacr.org/2017/281.pdf] are complementary approaches that
+reinforce differential privacy. Both aim to maintain privacy while
+training deep learning models from decentralized data sources such as
+personal mobile devices. This is becoming of increasing importance with the
+rapid growth of mobile health applications.
+However, training process in these approaches places constraints on the
 algorithms used and can make fitting a model substantially more challenging.
 
 Applying deep learning algorithms to this domain provides considerable
