@@ -249,7 +249,11 @@ features can also help use valuable training data most efficiently. Rajkomar et
 al. trained a deep neural network using generic images before tuning using only
 radiology images [@doi:10.1007/s10278-016-9914-9]. Datasets that require many of
 the same types of features might be used for initial training, before fine
-tuning takes place with the more sparse biomedical examples.
+tuning takes place with the more sparse biomedical examples. Though the analysis
+hasn't yet been attempted, it's possible that analogous strategies may be
+possible with electronic health records. For example, features learned from the
+electronic health record for one type of clinical test (e.g. a decrease over
+time in a lab value) may transfer across phenotypes.
 
 Methods to accomplish more with little high-quality labeled data are also being
 applied in other domains and may also be adapted to this challenge, e.g. data
