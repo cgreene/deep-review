@@ -278,9 +278,9 @@ scientists who use data from other researchers [@doi:10.1056/NEJMe1516564]. In
 short, a field that honors only discoveries and not the hard work of generating
 useful data will have difficulty encouraging scientists to share their hard-won
 data. Unfortunately, it's precisely those data that would help to power deep
-learning in the domain. Though not a methodological consideration, are underway
-to recognize those who promote an ecosystem of rigorous sharing and analysis
-[@doi:10.1038/ng.3830].
+learning in the domain. Though not a methodological consideration, efforts are
+underway to recognize those who promote an ecosystem of rigorous sharing and
+analysis [@doi:10.1038/ng.3830].
 
 We expect both improved methods and an improved culture of sharing to
 play an important role if deep learning is going to transform how we analyze
