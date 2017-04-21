@@ -31,22 +31,16 @@ certain tests based on the diagnosis that they suspect a patient has, a deep
 neural network may learn to "diagnose" patients simply based on the tests that
 are ordered. For some objective function this may offer good performance (i.e.
 predicting an ICD code), even though it does not provide insight into the
-underlying disease beyond physician activity.
+underlying disease beyond physician activity. This challenge is not unique to
+deep learning approaches; however, it is important for practitioners to be aware
+of these challenges and the possibility in this domain of constructing highly
+predictive classifiers of questionable actual utility.
 
 Our goal in this section is to assess the extent to which deep learning is
 already contributing to the discovery of novel categories. Where it isn't, we
 focus on barriers to achieving these goals. We also highlight approaches that
 researchers are taking to address challenges within the field, particularly with
 regards to data availability and labeling.
-
-### Major areas of existing contributions
-
-*There are a number of major challenges in this space. How do we get data
-together from multiple distinct systems? How do we find biologically meaningful
-patterns in that data? How do we store and compute on this data at scale? How
-do we share these data while respecting privacy? I've made a section for each
-of these. Feel free to add more. I see each section as something on the order
-of 1-2 paragraphs in our context.*
 
 #### Imaging applications in health care
 
@@ -193,8 +187,17 @@ heterogeneous data types, while uncovering nonlinear relationships between
 covariates and failure time. They showed their model more accurately
 stratified patients as a function of disease risk score compared the current
 clinical implementation.
-`TODO: @sw1: Are there specific challenges with using a deep neural network
-as opposed to current standard methods?`
+
+There is a computational cost for these methods, however, when compared to
+traditional, non-network approaches. For the exponential family models,
+despite their scalability [@arxiv:1206.7051], an important question for the
+investigator is whether he or she is interested in estimates of posterior
+uncertainty. Given that these models are effectively Bayesian neural networks,
+much of their utility simplifies to whether a Bayesian approach is warranted
+for a given increase in computational cost. Moreover, as with all variational
+methods, future work must continue to explore just how well the posterior
+distributions are approximated, especially as model complexity increases
+[@arxiv:1511.02386].
 
 ##### Challenges and opportunities in patient categorization
 
@@ -326,10 +329,13 @@ present security risks or accidentally allow for the exposure of individual
 level patient data. Tramer et al. [@arxiv:1609.02943] showed the ability to
 steal trained models via public APIs and Dwork and Roth
 [@doi:10.1561/0400000042] demonstrate the ability to expose individual level
-information from accurate answers in a machine learning model. Similar type of
-attacks also allows to find out if particular data instance was present in the
-original training set for the machine learning model [@arxiv:1610.05820]. There
+information from accurate answers in a machine learning model. Attackers can
+use similar attacks to find out if particular data instance was present in the
+original training set for the machine learning model [@arxiv:1610.05820] - in
+this case, whether a person's record was present. There
 are solutions to this challenge. Training algorithms in a differentially private
+information from accurate answers in a machine learning model. There are
+solutions to this challenge. Training algorithms in a differentially private
 manner provides a limited guarantee that the algorithms output will be equally
 likely to occur regardless of the participation of any one individual. The limit
 is determined by a single parameter which provides a quantification of privacy.
