@@ -257,7 +257,7 @@ time in a lab value) may transfer across phenotypes.
 
 Methods to accomplish more with little high-quality labeled data are also being
 applied in other domains and may also be adapted to this challenge, e.g. data
-programming [@arxiv:1605.07723], In data programming, noisy automated labeling
+programming [@arxiv:1605.07723]. In data programming, noisy automated labeling
 functions are integrated. Numerous writers have described data as the new oil
 [@url:http://ana.blogs.com/maestros/2006/11/data_is_the_new.html, @url:https://medium.com/twenty-one-hundred/data-is-the-new-oil-a-ludicrous-proposition-1d91bba4f294].
 The idea behind this metaphor is that data are available in large quantities,
