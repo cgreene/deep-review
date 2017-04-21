@@ -243,12 +243,12 @@ irrelevant features [@doi:10.1101/095786]. While adversarial training examples
 can be easily imagined for certain methods that operate on images, it's more
 challenging to figure out what an equivalent transformation would be for a
 patient's clinical test results. Consequently, it may be hard to employ
-adversarial training examples, not to be confused with adversarial neural
-networks, with other applications. Finally, approaches that transfer features
-can also help use valuable training data most efficiently. Rajkomar et al.
-trained a deep neural network using generic images before tuning using only
-radiology images [@doi:10.1007/s10278-016-9914-9]. Datasets that require many
-of the same types of features might be used for initial training, before fine
+adversarial training examples, not to be confused with generative adversarial
+neural networks, with other applications. Finally, approaches that transfer
+features can also help use valuable training data most efficiently. Rajkomar et
+al. trained a deep neural network using generic images before tuning using only
+radiology images [@doi:10.1007/s10278-016-9914-9]. Datasets that require many of
+the same types of features might be used for initial training, before fine
 tuning takes place with the more sparse biomedical examples.
 
 Methods to accomplish more with little high-quality labeled data are also being
