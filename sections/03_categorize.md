@@ -326,8 +326,10 @@ present security risks or accidentally allow for the exposure of individual
 level patient data. Tramer et al. [@arxiv:1609.02943] showed the ability to
 steal trained models via public APIs and Dwork and Roth
 [@doi:10.1561/0400000042] demonstrate the ability to expose individual level
-information from accurate answers in a machine learning model. There are
-solutions to this challenge. Training algorithms in a differentially private
+information from accurate answers in a machine learning model. Similar type of
+attacks also allows to find out if particular data instance was present in the
+original training set for the machine learning model [@arxiv:1610.05820]. There
+are solutions to this challenge. Training algorithms in a differentially private
 manner provides a limited guarantee that the algorithms output will be equally
 likely to occur regardless of the participation of any one individual. The limit
 is determined by a single parameter which provides a quantification of privacy.
@@ -338,10 +340,10 @@ privacy framework. Federated learning
 [@arxiv:1602.05629] and secure aggregations
 [@url:http://proceedings.mlr.press/v54/mcmahan17a.html
 @url:https://eprint.iacr.org/2017/281.pdf] are complementary approaches that
-reinforce differential privacy. Both aim to maintain privacy while
-training deep learning models from decentralized data sources such as
-personal mobile devices. This is becoming of increasing importance with the
-rapid growth of mobile health applications.
+reinforce differential privacy. Both aim to maintain privacy by training deep
+learning models from decentralized data sources such as personal mobile devices
+without transferring actual training instances. This is becoming of increasing
+importance with the rapid growth of mobile health applications.
 However, training process in these approaches places constraints on the
 algorithms used and can make fitting a model substantially more challenging.
 
