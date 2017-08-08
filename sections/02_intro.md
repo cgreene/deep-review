@@ -23,31 +23,47 @@ algorithms have produced comparable or higher accuracy than previous
 best-in-class methods that required years of extensive customization, and
 specialized implementations are now being used at industrial scales.
 
+Deep learning approaches grew from research in neural networks.
 Neural networks were first proposed in 1943 [@doi:10.1007/BF02478259] as a model
 for how our brains process information. The history of neural networks is
 interesting in its own right [@doi:10.1103/RevModPhys.34.135]. In neural
 networks, inputs are fed into a hidden layer, which feeds into one or more
-hidden layers, which eventually produce an output layer. The neural networks
+hidden layers, which eventually produce an output layer. 
+A layer consists of a set of nodes, usually called "features" or "units,"
+which are connected via edges to the immediately earlier and the
+immediately deeper layers.
+The nodes of the input layer generally consist of the variables being measured in the dataset
+of interest - for example, each node could represent the intensity value of a specific
+pixel in an image processing application or a gene expression value in a transcriptomics 
+experiment.
+The neural networks
 used for deep learning have multiple hidden layers. Each layer essentially
 performs feature construction for the layers before it. The training process
 used often allows layers deeper in the network to contribute to the refinement
 of earlier layers. For this reason, these algorithms can automatically engineer
 features that are suitable for many tasks and customize those features for one
-or more specific tasks. Deep learning does many of the same things as more
-familiar approaches. Like a clustering algorithm, it can build features that
-describe recurrent patterns in data. Like a regression approach, deep learning
-methods can predict some output. However, deep learning methods combine both of
-these steps. When sufficient data are available, these methods construct
+or more specific tasks. 
+
+Deep learning does many of the same things as more
+familiar machine learning approaches. In particular, deep learning approaches can be used both in *supervised*
+applications - where the goal is to accurately predict one or more labels or outcomes associated with each
+data point - in the place of regression approaches, as well as in *unsupervised*, or "exploratory" applications - 
+where the goal is to summarize, explain, or
+identify interesting patterns in a data set - as a form of clustering.
+Deep learning methods may in fact combine both of
+these steps. When sufficient data are available and labeled, these methods construct
 features tuned to a specific problem and combine those features into a
-predictor. Recently, hardware improvements and very
+predictor.
+In fact, if the dataset is "labeled" with binary classes, a simple neural network 
+with no hidden layers and no cycles between units is equivalent to logistic regression
+if the output layer is a sigmoid (logistic) function of the input layer.
+Similarly, for continuous outcomes, linear regression can be seen as a simple neural network.
+Thus, in some ways, supevised deep learning approaches can be seen as a generalization of regression 
+models that allow for greater flexibility.
+Recently, hardware improvements and very
 large training datasets have allowed these deep learning techniques to surpass
 other machine learning algorithms for many problems.
-
-Neural networks are most widely associated with supervised machine learning,
-where the goal is to accurately predict one or more labels associated with each
-data point. However, deep learning algorithms can also be used in an
-exploratory, "unsupervised" mode, where the goal is to summarize, explain, or
-identify interesting patterns in a data set.  In a famous and early example,
+In a famous and early example,
 scientists from Google demonstrated that a neural network "discovered" that
 cats, faces, and pedestrians were important components of online videos
 [@url:http://research.google.com/archive/unsupervised_icml2012.html] without
@@ -68,12 +84,44 @@ large. New neural network approaches are also well-suited for addressing
 distinct challenges. For example, neural networks structured as autoencoders or
 as adversarial networks require no labels and are now regularly used for
 unsupervised tasks. In this review, we do not exhaustively discuss the different
-types of deep neural network architectures. A recent book from Goodfellow et al.
+types of deep neural network architectures; an overview of the principal terms used
+herein is given in Table 1. A recent book from Goodfellow et al.
 [@url:http://www.deeplearningbook.org/] covers these in detail. Finally, the
 larger datasets now available are also sufficient for fitting the many
 parameters that exist for deep neural networks. The convergence of these factors
 currently makes deep learning extremely adaptable and capable of addressing the
-nuanced differences of each domain to which it is applied.
+nuanced differences of each domain to which it is applied. 
+
+Table 1. Glossary table
+
+| Term          | Definition           |
+| :------------- |:--------------|
+| Neural network  (NN)   | Machine-learning approach where inputs are fed into one or more hidden layers, producing an outer layer |
+| Deep learning (DL) approach      | NN with multiple hidden layers      | 
+| Supervised learning | Machine-learning approaches with goal of prediction of labels or outcomes     | 
+| Unsupervised learning | Machine-learning approaches with goal of data summarization or pattern identification |
+| Convolutional neural network (CNN) | NN used for grid data - such as images or equally-spaced time points - that considers convolutions instead of linear transformations, leading to increased sparsity and thus improved efficiency |
+| Feed-forward neural network (FFNN) | NN that does not have cycles between nodes in the same layer |
+| Multi-layer perceptron (MLP) | Type of FFNN with at least one hidden layer where each deeper layer is a nonlinear function of each earlier layer |
+| Recurrent neural network (RNN) | NN used for sequential data - such as time series or genomic data - by using cycles between nodes in the hidden layers, in contrast to FFNN  |
+| Long short-term memory (LSTM) model | Special type of RNN that can learn longer-term dependencies |
+| Autoencoder (AE) | NN that sets the outer layer to be similar to the input layer, used for example in dimension reduction |
+| Generative neural network | NN approach that uses models trained to generate data similar to the collected data, leading to smaller number of parameters |
+| Generative adversarial network (GAN) | Generative NN approach that uses two networks, one that generates samples from training data and one that discriminates between generated and training data |
+| Restricted Bolzmann machine (RBM) | Generative NN that forms the building block for many DL approaches, having a single input layer and a single hidden layer, with no connections between the nodes within each layer |
+| Deep belief network (DBN) | Generative NN with several hidden layers, which can be obtained from combining multiple RBMs |
+
+While deep learning shows increased flexibility over other machine learning approaches, as 
+seen in the remainder of this review, it requires large training sets in order to fit
+the hidden layers, as well as accurate labels for the supervised learning applications.
+This is one of the primary drivers for its usefulness in some areas of 
+biology and medicine and comparatively lower impact in others. At the same time, this highlights
+the potentially even larger role that it may play in future research, given the increases
+in data in all areas of biomedicine. It is also important to see it as a branch of machine learning
+and acknowledge that it has the same limitations as other approaches in that field. In particular, the
+results are still dependent on the underlying study design and the usual caveats of correlation versus
+causation still apply - a more precise answer is only better than a less precise one if it answers the
+correct question.
 
 ### Will deep learning transform the study of human disease?
 
